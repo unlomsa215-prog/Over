@@ -4429,7 +4429,7 @@ def handle_callback(call):
                 bot.edit_message_text(
                     f"💣 ** МИНЫ ** 💣\n\n"
                     f"Ставка: {format_number(game['bet'])}\n"
-                    f"Мин: {game['mines']}\n
+                    f"Мин: {game['mines']}\n"
                     f"Шагов: {game['steps']}\n"
                     f"Множитель: x{multiplier}\n"
                     f"Забрать сейчас: {format_number(potential_win)} кредиксов\n\n"
