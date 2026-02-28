@@ -4636,10 +4636,42 @@ signal.signal(signal.SIGINT, signal_handler)
 signal.signal(signal.SIGTERM, signal_handler)
 
 # ====================== ЗАПУСК БОТА ======================
+load_data()
+    
+    # ====================== БАЗОВЫЕ ОБРАБОТЧИКИ ======================
+@bot.message_handler(commands=['start', 'Start', 'START'])
+def start_command(message):
+    user_id = str(message.from_user.id)
+    
+    # Сохраняем username
+    if message.from_user.username:
+        update_username_cache(user_id, message.from_user.username)
+    
+    # Создаем пользователя
+    user = get_user(user_id)
+    
+    # Отправляем приветствие
+    bot.send_message(
+        message.chat.id,
+        f"👋 ** Добро пожаловать! **\n\n"
+        f"💰 Твой баланс: {format_number(user['balance'])} кредиксов\n"
+        f"💎 KRDS: {user['krds_balance']}\n\n"
+        f"📋 Список команд: /помощь"
+    )
+    print(f"✅ Новый пользователь: {user_id}")
+
+@bot.message_handler(commands=['test', 'тест'])
+def test_command(message):
+    """Простая тестовая команда для проверки"""
+    bot.send_message(
+        message.chat.id, 
+        "✅ Бот работает! Команда получена."
+    )
+    print(f"📩 Тест от {message.from_user.id}: {message.text}")
 if __name__ == '__main__':
     load_data()
     print("=" * 60)
-    print("✅ БОТ КАЗИНО ЗАПУЩЕН!")
+    print("✅ БОТ  ЗАПУЩЕН!")
     print("=" * 60)
     print("📋 СИСТЕМЫ:")
     print("  • 🐭 Мышки (пассивный доход)")
