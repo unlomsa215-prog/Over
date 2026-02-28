@@ -3891,7 +3891,7 @@ def slots_game(message):
                 f"🎰 ** СЛОТЫ ** 🎰\n\n"
                 f"{' '.join(symbols)}\n\n"
                 f"✅ ВЫИГРЫШ: x{multiplier}\n"
-                f"💰 +{format_number(win_amount)} кредиксов\n
+                f"💰 +{format_number(win_amount)} кредиксов\n"
                 f"💸 Баланс: {format_number(user['balance'])}"
             )
         else:
