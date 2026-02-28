@@ -2828,7 +2828,7 @@ def profile_command(message):
         f"Всего: {len(user.get('businesses', {}))} шт.\n\n"
         f"👥 ** СОЦИАЛ **\n"
         f"👥 Рефералов: {user.get('referrals', 0)}\n"
-        f"👑 Клан: {clan_name}\n
+        f"👑 Клан: {clan_name}\n"
         f"💼 Работ: {user.get('work_count', 0)}\n\n"
         f"📱 ** ТЕЛЕФОН **\n"
         f"📞 Номер: {user.get('phone_number', 'Нет номера')}\n"
